@@ -37,14 +37,14 @@ export default function Home() {
     </Link>
   </div>
 
-  <div className="mt-14 w-full flex justify-center">
+  {/* <div className="mt-14 w-full flex justify-center">
     <div className="relative bg-[#0E1016] border border-gray-800 rounded-2xl p-6 max-w-4xl shadow-lg hover:border-cyan-500/40 transition">
       <p className="text-gray-400 text-sm mb-3 text-left">Example Preview</p>
       <div className="h-40 flex items-center justify-center text-gray-500 text-sm bg-[#101218] rounded-lg">
         📊 Live Price Graphs Coming Soon
       </div>
     </div>
-  </div>
+  </div> */}
 </section>
 
 
@@ -87,7 +87,7 @@ export default function Home() {
       <p className="text-gray-400">
         Copy the link of your favorite product from Amazon, Flipkart, or any supported store.
       </p>
-    </div>
+    </div>  
 
     {/* Step 2 */}
     <div className="flex flex-col items-center">
