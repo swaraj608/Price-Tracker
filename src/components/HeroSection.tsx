@@ -14,7 +14,7 @@ interface HeroSectionProps {
     label: string;
     href: string;
   };
-  backgroundImage?: string; 
+  backgroundImage?: string;
 }
 
 export default function HeroSection({
@@ -43,18 +43,23 @@ export default function HeroSection({
       {/* Subtitle */}
       <p className="text-gray-300 max-w-2xl text-lg mb-10">{subtitle}</p>
 
-    {/* Search bar  */}
+      {/* Search Bar */}
+      <div className="relative w-full max-w-md my-6 group">
+        <div className="flex items-center bg-[#0F1117] border border-gray-700 rounded-2xl px-4 py-3 shadow-lg transition-all duration-300 group-hover:border-cyan-500/70 group-hover:shadow-cyan-500/20">
+          <Search
+            size={20}
+            className="text-gray-400 mr-2 transition-colors duration-300 group-hover:text-cyan-400"
+          />
+          <input
+            type="text"
+            placeholder="Search products, deals or brands..."
+            className="bg-transparent outline-none text-base text-gray-200 placeholder-gray-500 w-full focus:text-white"
+          />
+        </div>
 
-      <div className="flex items-center bg-[#101218] border border-gray-700 rounded-lg px-3 py-3 my-4 w-120  focus-within:border-cyan-500 transition">
-            <Search size={18} className="text-gray-400 mx-1" />
-            <input
-              type="text"
-              placeholder="Search..."
-              className="bg-transparent outline-none text-sm text-gray-200 w-44 w-full"
-            />
+        {/* Cyan glow animation border */}
+        <span className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500 pointer-events-none"></span>
       </div>
-
-
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
