@@ -31,14 +31,7 @@ export default function Navbar() {
           </Link>
 
           {/* --- Search Bar --- */}
-          <div className="flex items-center bg-[#101218] border border-gray-700 rounded-lg px-3 py-2 ml-4 focus-within:border-cyan-500 transition">
-            <Search size={18} className="text-gray-400 mr-2" />
-            <input
-              type="text"
-              placeholder="Search..."
-              className="bg-transparent outline-none text-sm text-gray-200 w-44"
-            />
-          </div>
+          
         </div>
 
         {/* --- Mobile Menu Button --- */}

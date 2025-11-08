@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { Search } from "lucide-react";
 
 interface HeroSectionProps {
   title: string;
@@ -41,6 +42,19 @@ export default function HeroSection({
 
       {/* Subtitle */}
       <p className="text-gray-300 max-w-2xl text-lg mb-10">{subtitle}</p>
+
+    {/* Search bar  */}
+
+      <div className="flex items-center bg-[#101218] border border-gray-700 rounded-lg px-3 py-3 my-4 w-120  focus-within:border-cyan-500 transition">
+            <Search size={18} className="text-gray-400 mx-1" />
+            <input
+              type="text"
+              placeholder="Search..."
+              className="bg-transparent outline-none text-sm text-gray-200 w-44 w-full"
+            />
+      </div>
+
+
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
