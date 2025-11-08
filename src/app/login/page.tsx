@@ -1,0 +1,57 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+
+export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: handle login logic
+    console.log({ email, password });
+  };
+
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-[#0B0C10]">
+      <div className="bg-[#101218] border border-gray-800 rounded-2xl p-8 w-full max-w-md shadow-lg">
+        <h1 className="text-3xl font-bold text-center mb-6 text-cyan-400">
+          Login
+        </h1>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full p-3 bg-[#0E1016] border border-gray-700 rounded-lg text-white"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full p-3 bg-[#0E1016] border border-gray-700 rounded-lg text-white"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+          >
+            Log In
+          </button>
+        </form>
+
+        <p className="text-gray-400 text-center mt-4">
+          Don’t have an account?{" "}
+          <Link href="/signup" className="text-cyan-400 hover:underline">
+            Sign up
+          </Link>
+        </p>
+      </div>
+    </section>
+  );
+}
