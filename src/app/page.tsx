@@ -15,12 +15,12 @@ export default function Home() {
       <Navbar />
 
 
-  <HeroSection
+<HeroSection
   title="Track Prices. Save Smarter."
   subtitle="Stay ahead of the market with real-time product tracking, detailed insights, and instant alerts when prices drop."
   primaryButton={{ label: "Get Started", href: "/signup" }}
   secondaryButton={{ label: "Login", href: "/login" }}
-  backgroundImage="https://images.unsplash.com/photo-1506765515384-028b60a970df"
+  backgroundImage="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=2000&q=80"
 />
 
 
