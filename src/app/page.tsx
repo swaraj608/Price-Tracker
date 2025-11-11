@@ -61,13 +61,36 @@ export default function Home() {
 </section>
 
 <Process
-  title="Getting Started"
+  title="Start Tracking in Minutes"
+  subtitle="From sign-up to smart price alerts — everything happens effortlessly."
   steps={[
-    { number: 1, title: "Sign Up", description: "Create an account.", gradient: "bg-gradient-to-r from-pink-500 to-orange-500" },
-    { number: 2, title: "Add Your Products", description: "Paste product URLs.", gradient: "bg-gradient-to-r from-orange-500 to-yellow-500" },
-    { number: 3, title: "Receive Alerts", description: "We notify you instantly!", gradient: "bg-gradient-to-r from-yellow-500 to-green-500" },
+    {
+      number: 1,
+      title: "Create Your Account",
+      description:
+        "Join thousands of smart shoppers using PriceTracker. Set up your dashboard in seconds.",
+      icon: "UserPlus",
+      color: "from-cyan-400 to-blue-500",
+    },
+    {
+      number: 2,
+      title: "Paste Product Links",
+      description:
+        "Add products from Amazon, Flipkart, or any online store. We’ll fetch and monitor prices automatically.",
+      icon: "Link",
+      color: "from-blue-500 to-violet-500",
+    },
+    {
+      number: 3,
+      title: "Relax & Get Alerts",
+      description:
+        "Receive instant alerts when prices drop — via email or dashboard notifications.",
+      icon: "BellRing",
+      color: "from-violet-500 to-pink-500",
+    },
   ]}
 />
+
 
 
       {/* Footer */}
