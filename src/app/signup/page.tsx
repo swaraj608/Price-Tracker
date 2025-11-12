@@ -3,6 +3,7 @@ import axios from "axios"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
@@ -23,8 +24,14 @@ export default function SignupPage() {
       password: form.password
       })
       console.log("signup successfull")
+      toast.success("signup successfull !",{
+        position : "top-center"
+      });
       router.push("/login")
     } catch(err) {
+      toast.error("error while signup",{
+        position: "top-center"
+      });
       console.error("signup failed : ", err)
     }
   };

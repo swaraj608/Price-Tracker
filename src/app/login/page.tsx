@@ -4,6 +4,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
@@ -20,8 +21,14 @@ export default function LoginPage() {
         password
       })
       console.log("user loged in successfully");
+      toast.success("login successfull !", {
+        position: "top-center",
+      })
       router.push("/dashboard");
     } catch(err){
+      toast.error("error while login !",{
+        position: "top-center"
+      })
       console.error("error while login : ", err);
     }
   };
