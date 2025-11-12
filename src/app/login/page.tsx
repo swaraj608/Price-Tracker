@@ -1,16 +1,29 @@
 "use client";
 
+import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: handle login logic
-    console.log({ email, password });
+    try{
+      const res = await axios.post(`${BACKEND_URL}/user/signin`,{
+        email ,
+        password
+      })
+      console.log("user loged in successfully");
+      router.push("/dashboard");
+    } catch(err){
+      console.error("error while login : ", err);
+    }
   };
 
   return (

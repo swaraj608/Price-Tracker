@@ -1,19 +1,32 @@
 "use client";
-
+import axios from "axios"
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
 
 export default function SignupPage() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: handle signup logic
-    console.log(form);
+    try{
+      const res = await axios.post(`${BACKEND_URL}/user/signup`,{
+      email: form.email,
+      name: form.name,
+      password: form.password
+      })
+      console.log("signup successfull")
+      router.push("/login")
+    } catch(err) {
+      console.error("signup failed : ", err)
+    }
   };
 
   return (
