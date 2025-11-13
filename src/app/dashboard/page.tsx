@@ -4,7 +4,7 @@ import { useState } from "react";
 import KPISection from "@/components/Dashboard/KPISection";
 import PriceTrendChart from "@/components/Dashboard/PriceTrendChart";
 import ProductGrid from "@/components/Dashboard/ProductGrid";
-import RecentChanges from "@/components/Dashboard/RecentChanges";
+//import RecentChanges from "@/components/Dashboard/RecentChanges";
 
 export default function Dashboard() {
   const [products] = useState([
@@ -48,10 +48,10 @@ export default function Dashboard() {
       />
 
       {/* Charts Section */}
-      <section className="grid md:grid-cols-2 gap-6 my-10">
-        <PriceTrendChart />
-        <RecentChanges products={products} />
+       <section className="w-full my-10">
+           <PriceTrendChart />
       </section>
+
 
       {/* Product Grid */}
       <ProductGrid products={products} />
