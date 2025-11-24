@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { TrendingUp, Brain, Bell } from "lucide-react";
@@ -10,7 +9,6 @@ import HeroSection from "@/components/HeroSection";
 import Process from "@/components/Process";
 
 export default function Home() {
-  // ✅ Define features array here
   const features = [
     {
       title: "Real-Time Tracking",

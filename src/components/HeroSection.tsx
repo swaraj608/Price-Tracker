@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Search } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface HeroSectionProps {
   title: string;
@@ -24,6 +25,8 @@ export default function HeroSection({
   secondaryButton,
   backgroundImage,
 }: HeroSectionProps) {
+  const [url, setUrl] = useState("");
+  const router = useRouter();
   return (
     <section
       className="flex flex-col items-center justify-center text-center py-28 px-6 bg-gradient-to-b from-[#0B0C10] via-[#0E1016] to-[#101218]"
@@ -54,7 +57,15 @@ export default function HeroSection({
             type="text"
             placeholder="Search products, deals or brands..."
             className="bg-transparent outline-none text-base text-gray-200 placeholder-gray-500 w-full focus:text-white"
+            onChange={(e) => setUrl(e.target.value)}
+            value={url}
           />
+          <button
+            onClick={() => router.push(`/dashboard?url=${url}`)}
+            className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 transition px-8 py-3 rounded-lg font-semibold shadow-md"
+          >
+            Search
+          </button>
         </div>
 
         {/* Cyan glow animation border */}
