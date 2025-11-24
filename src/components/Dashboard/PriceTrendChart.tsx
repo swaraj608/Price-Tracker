@@ -11,7 +11,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-// 🗓️ Monthly Data
+//  Monthly Data
 const data = [
   { name: "Jan", price: 1200 },
   { name: "Feb", price: 1180 },
